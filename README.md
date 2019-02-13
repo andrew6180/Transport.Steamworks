@@ -1,5 +1,5 @@
 
-for use with [Vis2k Mirror 2018 Branch](https://github.com/vis2k/Mirror/tree/2018),[Facepunch.Steamworks](https://github.com/Facepunch/Facepunch.Steamworks) and Unity 2018.
+for use with [Vis2k Mirror 2018 Branch](https://github.com/vis2k/Mirror/tree/2018), [Facepunch.Steamworks](https://github.com/Facepunch/Facepunch.Steamworks) and Unity 2018.
 
 **Requires using .NET 4.x in Unity**
 
@@ -53,3 +53,20 @@ if (Steam.Instance.ServerConnectionMap.TryGetBySecond(connectionID, out var stea
 {
     // do something with steamID
 }
+```
+
+# Features
+
+You can use Unreliable, Reliable, or UnreliableNoDelay channels via
+
+```csharp
+[Command(channel = (int) SteamPacketChannel.Unreliable)]
+```
+
+not specifying a channel is the same as
+```csharp
+[Command(channel = (int) SteamPacketChannel.Reliable)]
+```
+*note that `SteamPacketChannel.Internal` is for the transport to communicate connections / disconnects. Anything sent on this channel will be discarded.*
+
+
