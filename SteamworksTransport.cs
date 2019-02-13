@@ -185,7 +185,7 @@ namespace Transport.Steamworks
             _server.OnConnect.RemoveListener(ServerAddClientTimeout);
             _server.OnData.RemoveListener(ServerUpdateClientTimeout);
             _server.OnDisconnect.RemoveListener(ServerDisconnectTimeout);
-            _timeouts.Clear();
+            _timeouts?.Clear();
             _server.Stop();
         }
 
