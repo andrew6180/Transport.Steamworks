@@ -175,9 +175,9 @@ namespace Transport.Steamworks
             return _server.Disconnect(connectionId);
         }
 
-        public override bool GetConnectionInfo(int connectionId, out string address)
+        public override string ServerGetClientAddress(int connectionId)
         {
-            return _server.GetConnectionInfo(connectionId, out address);
+            return _server.GetConnectionInfo(connectionId);
         }
 
         public override void ServerStop()

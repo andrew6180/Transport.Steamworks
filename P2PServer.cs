@@ -241,11 +241,10 @@ namespace Transport.Steamworks
             CloseSession(steamID);
         }
 
-        public bool GetConnectionInfo(int connectionId, out string address)
+        public string GetConnectionInfo(int connectionId)
         {
             var exists = ConnectionMap.TryGetBySecond(connectionId, out var steamID);
-            address = steamID.ToString();
-            return exists;
+            return exists ? steamID.ToString() : "MISSING_STEAM_ID";
         }
 
         /// <summary>
