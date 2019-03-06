@@ -3,6 +3,7 @@ using Facepunch.Steamworks.Unity;
 using Mirror;
 using UnityEngine;
 using UnityEngine.UI;
+using Client = Facepunch.Steamworks.Client;
 
 namespace Transport.Steamworks.Testing
 {
